@@ -1,0 +1,493 @@
+{
+  "schema": "blockblack.trivia-reconstruction/v2",
+  "trivia": {
+    "genesis-headline": {
+      "title": "Genesis newspaper headline",
+      "kind": "block",
+      "block_hash": "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+      "stream": "coinbase",
+      "trim_before": "The Times",
+      "decode": "text",
+      "filename": "genesis-headline.txt"
+    },
+    "hal-first-transfer": {
+      "title": "First person-to-person transfer to Hal Finney",
+      "kind": "transaction-summary",
+      "txids": ["f4184fc596403b9d638783cf57adfe4c75c605f6356fbc91338530e9831e9e16"],
+      "stream": "outputs",
+      "decode": "none",
+      "note": "This payment contains no arbitrary prose or media payload; the raw transaction itself is the historical evidence."
+    },
+    "bitcoin-pizza-payment": {
+      "title": "10,000 BTC pizza payment",
+      "kind": "transaction-summary",
+      "txids": ["a1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d"],
+      "stream": "outputs",
+      "decode": "none",
+      "note": "The blockchain proves the payment, not the pizzas; the forum thread supplies the meal attribution."
+    },
+    "hidden-bitcoin-logo": {
+      "title": "Hidden Bitcoin logo JPEG",
+      "kind": "transaction",
+      "txids": [
+        "ceb1a7fb57ef8b75ac59b56dd859d5cb3ab5c31168aa55eb3819cd5ddbd3d806",
+        "9173744691ac25f3cd94f35d4fc0e0a2b9d1ab17b4fe562acc07660552f95518"
+      ],
+      "stream": "p2pkh-dust",
+      "decode": "yenc",
+      "filename": "bitcoin-logo.jpg",
+      "note": "The two transaction parts are joined in the logical order recorded by the yEnc wrapper."
+    },
+    "prayer-war-rickroll": {
+      "title": "Mining-pool prayer-war rickroll",
+      "kind": "block",
+      "block_hash": "00000000000005b71bc4c0cf24a6f00e04980c627e9409266983bd37acbe14d3",
+      "stream": "coinbase",
+      "decode": "text",
+      "filename": "coinbase-message.txt"
+    },
+    "len-sassaman-memorial": {
+      "title": "Len Sassaman ASCII memorial",
+      "kind": "transaction",
+      "txids": ["930a2114cdaa86e1fac46d15c74e81c09eee1d4150ff9d48e76cb0697d8e1d72"],
+      "stream": "p2pkh-dust",
+      "printable_chunks_min": 0.8,
+      "chunk_separator": "\n",
+      "trim_before": "---BEGIN TRIBUTE---",
+      "trim_after": "----END TRIBUTE----",
+      "decode": "text",
+      "filename": "len-sassaman-memorial.txt"
+    },
+    "bitcoin-whitepaper": {
+      "title": "Bitcoin whitepaper PDF",
+      "kind": "transaction",
+      "txids": ["54e48e5f5c656b26c3bca14a8c95aa583d07ebe84dde3b7dd4a78f4e4186e713"],
+      "stream": "multisig",
+      "satoshi_uploader": true,
+      "decode": "auto",
+      "filename": "bitcoin-whitepaper.pdf"
+    },
+    "cablegate-archive": {
+      "title": "WikiLeaks Cablegate archive, index, and downloader",
+      "kind": "transaction",
+      "txids": [
+        "691dd277dc0e90a462a3d652a1171686de49cf19067cd33c7df0392833fb986a",
+        "6c53cd987119ef797d5adccd76241247988a0a5ef783572a9972e7371c5fb0cc"
+      ],
+      "stream": "multisig",
+      "satoshi_uploader": true,
+      "decode": "text",
+      "filename": "cablegate-index-and-downloader.txt",
+      "note": "The decoded index names the archive chunks; the bundled downloader text documents the historical recovery method."
+    },
+    "openpgp-mystery": {
+      "title": "Encrypted OpenPGP mystery file",
+      "kind": "transaction",
+      "txids": ["7379ab5047b143c0b6cfe5d8d79ad240b4b4f8cced55aa26f86d1d3d370c0d4c"],
+      "stream": "multisig",
+      "satoshi_uploader": true,
+      "decode": "auto",
+      "filename": "mystery-openpgp.bin",
+      "note": "This reconstructs ciphertext. The unknown passphrase is not recoverable from the chain."
+    },
+    "broken-basic-program": {
+      "title": "Broken BASIC creature simulator",
+      "kind": "transaction",
+      "txids": ["3a1c1cc760bffad4041cbfde56fbb5e29ea58fda416e9f4c4615becd65576fe7"],
+      "stream": "p2sh",
+      "satoshi_uploader": true,
+      "decode": "text",
+      "filename": "creature-simulator.bas"
+    },
+    "fake-satoshi-email": {
+      "title": "Fake Satoshi code-patch email",
+      "kind": "transaction",
+      "txids": ["77822fd6663c665104119cb7635352756dfc50da76a92d417ec1a12c518fad69"],
+      "stream": "outputs",
+      "trim_before": "From ",
+      "decode": "text",
+      "filename": "fake-satoshi-email.txt"
+    },
+    "explorer-xss-test": {
+      "title": "Explorer XSS pop-up string",
+      "kind": "transaction",
+      "txids": ["59bd7b2cff5da929581fc9fef31a2fba14508f1477e366befb1eb42a8810a000"],
+      "stream": "opreturn",
+      "decode": "text",
+      "filename": "xss-test-string.txt",
+      "note": "Open as text only; never execute untrusted chain content in a browser."
+    },
+    "nelson-mandela-memorial": {
+      "title": "Nelson Mandela portrait and quotations",
+      "kind": "atomsea",
+      "root_txid": "78f0e6de0ce007f4dd4a09085e649d7e354f70bc7da06d697b167f353f115b8e",
+      "trim_magic": true,
+      "trim_known_end": true,
+      "decode": "auto",
+      "filename": "nelson-mandela.jpg"
+    },
+    "full-rickroll": {
+      "title": "Full rickroll lyrics",
+      "kind": "transaction",
+      "txids": ["d29c9c0e8e4d2a9790922af73f0b8d51f0bd4bb19940d9cf910ead8fbe85bc9b"],
+      "stream": "opreturn",
+      "decode": "text",
+      "filename": "rickroll.txt"
+    },
+    "mt-gox-farewell": {
+      "title": "Mt. Gox farewell",
+      "kind": "transaction",
+      "txids": ["0540b5dda23ee870330c6b1e18a88c592cf8d847c47f1dc1d5328f46115b12b3"],
+      "stream": "opreturn",
+      "decode": "text",
+      "filename": "mt-gox-farewell.txt"
+    },
+    "ascii-cat": {
+      "title": "ASCII cat",
+      "kind": "transaction",
+      "txids": ["7b537ad012439c6306dd74e13ba9c20926d68d04fc0c6da2fc81a8eb8f9ea017"],
+      "stream": "p2pkh-dust",
+      "printable_chunks_min": 0.8,
+      "trim_after": "m_m)",
+      "decode": "latin1",
+      "filename": "ascii-cat.txt"
+    },
+    "force-of-will": {
+      "title": "Force of Will ASCII card",
+      "kind": "transaction",
+      "txids": ["9a74d0ee2e9a925d9afadc413e087fa2effda031935bf19a0d4d48df76e4ce3f"],
+      "stream": "p2pkh-dust",
+      "printable_chunks_min": 0.8,
+      "decode": "text",
+      "filename": "force-of-will.txt"
+    },
+    "hypnotoad": {
+      "title": "Hypnotoad ASCII art",
+      "kind": "transaction",
+      "txids": ["69708943906eb32a320a5a450fed450b0f14b4e475a98bc74615962b68a0bc83"],
+      "stream": "p2pkh-dust",
+      "printable_chunks_min": 0.8,
+      "decode": "text",
+      "filename": "hypnotoad.txt"
+    },
+    "big-blocks-parody": {
+      "title": "I like big blocks parody",
+      "kind": "transaction",
+      "txids": ["08893442680a20c4d0548dec2c8c421fa43336528b4e274dbf2652774f9c9f2d"],
+      "stream": "input-text",
+      "chunk_separator": "\n",
+      "nul_to_newline": true,
+      "trim_before": "I like big blocks",
+      "trim_after": "https://www.reddit.com/r/Bitcoin/comments/354nrp/gavin_be_like/cr0z1ie",
+      "decode": "text",
+      "filename": "big-blocks-parody.txt"
+    },
+    "503-over-capacity": {
+      "title": "503 Bitcoin over capacity message",
+      "kind": "transaction",
+      "txids": ["a87d406fae047258a12923b3c11a797a5765bd8f868df5c7e9b1cead0e92c9c1"],
+      "stream": "opreturn",
+      "decode": "text",
+      "filename": "503-bitcoin-over-capacity.txt"
+    },
+    "2020-halving-headline": {
+      "title": "2020 halving newspaper headline",
+      "kind": "block",
+      "block_hash": "0000000000000000000d656be18bb095db1b23bd797266b0ac3ba720b1962b1e",
+      "stream": "coinbase",
+      "trim_before": "NYTimes",
+      "decode": "text",
+      "filename": "2020-halving-headline.txt"
+    },
+    "block-666666-bible-puzzle": {
+      "title": "Romans 12:21 at block 666,666",
+      "kind": "transaction",
+      "txids": ["057954bb28527ff9c7701c6fd2b7f770163718ded09745da56cc95e7606afe99"],
+      "stream": "opreturn",
+      "decode": "text",
+      "filename": "romans-12-21.txt"
+    },
+    "inscription-zero": {
+      "title": "Ordinal inscription zero pixel skull",
+      "kind": "transaction",
+      "txids": ["6fb976ab49dcec017f1e201e84395983204ae1a7c2abf7ced0a85d692e442799"],
+      "stream": "inscription",
+      "decode": "auto",
+      "filename": "inscription-zero.png"
+    },
+    "taproot-wizard": {
+      "title": "Taproot Wizard near-4 MB inscription",
+      "kind": "transaction",
+      "txids": ["0301e0480b374b32851a9462db29dc19fe830a7f7d7a88b81612b9d42099c0ae"],
+      "stream": "inscription",
+      "decode": "auto",
+      "filename": "taproot-wizard.jpg"
+    },
+    "block-840000": {
+      "title": "Block 840,000 halving and artifact traffic",
+      "kind": "block",
+      "block_hash": "0000000000000000000320283a032748cef8227873ff4872689bf23f1cda83a5",
+      "stream": "block-opreturns",
+      "decode": "text",
+      "filename": "block-840000-opreturns.txt",
+      "note": "The consensus halving is not itself an arbitrary payload; this extracts the block's explicit OP_RETURN records."
+    },
+    "publish-text-self-publication": {
+      "title": "publish-text.py self-publication",
+      "kind": "transaction",
+      "txids": ["1e47936f37e71b98e8bafe51ddc902d59c1318bc556329ba4ab1996981785292"],
+      "stream": "input-text",
+      "chunk_separator": "\n",
+      "trim_before": "#!/usr/bin/env python",
+      "decode": "text",
+      "filename": "publish-text.py"
+    },
+    "skynet-nihilism": {
+      "title": "Skynet nihilism and domain joke",
+      "kind": "transaction",
+      "txids": ["61e26d407c17e8ee33a8b166c78f78c53cdcdc0078ae1f9405e6583cfb90eaf4"],
+      "stream": "auto",
+      "decode": "text",
+      "filename": "skynet.txt"
+    },
+    "digits-of-pi": {
+      "title": "More than 1,000 digits of pi",
+      "kind": "atomsea",
+      "root_txid": "70fd289901bae0409f27237506c330588d917716944c6359a8711b0ad6b4ce76",
+      "trim_before": "3.141",
+      "trim_after": "092164201989",
+      "decode": "text",
+      "filename": "pi.txt"
+    },
+    "poetry-journal": {
+      "title": "Computational poetry journal",
+      "kind": "transaction",
+      "txids": ["e3e37ed5c1de2631c147bd39429e42ff634e95b7d72423bc32d6c6b9d8eef8ee"],
+      "stream": "p2pkh-dust",
+      "printable_chunks_min": 0.9,
+      "rstrip_nul": true,
+      "decode": "text",
+      "filename": "computational-poetry-journal.txt"
+    },
+    "on-chain-job-application": {
+      "title": "Unanswered on-chain job application",
+      "kind": "transaction",
+      "txids": ["604f17dfdb5a88fc072bd2bcf53436087c899051241e519af7241dc0037d3df6"],
+      "stream": "p2pkh-dust",
+      "printable_chunks_min": 0.9,
+      "rstrip_nul": true,
+      "decode": "text",
+      "filename": "job-application.txt"
+    },
+    "arecibo-message": {
+      "title": "Arecibo interstellar message",
+      "kind": "atomsea",
+      "root_txid": "c6d2e535cd2ba4659e954a61198c66fd98c60f6475cf8ff92a404f3fe3a16c4b",
+      "trim_before": "<p>On November",
+      "decode": "text",
+      "filename": "arecibo-message.txt"
+    },
+    "super-mario-coin": {
+      "title": "Super Mario coin data URL",
+      "kind": "transaction",
+      "txids": ["bf7ef3216ae09f8252c76e7d0031bc4aa131a23a6900f8371c44ffde7957c8da"],
+      "stream": "p2pkh-dust",
+      "printable_chunks_min": 0.95,
+      "trim_before": "data:image/png;base64,",
+      "decode": "base64",
+      "filename": "super-mario-coin.png"
+    },
+    "spock-mp3": {
+      "title": "Spock Live Long and Prosper MP3",
+      "kind": "atomsea",
+      "root_txid": "1bc87dbff1ff5831287f62ac7cf95579794e4386688479bab66174963f9a4a0c",
+      "trim_magic": true,
+      "decode": "auto",
+      "filename": "live-long-and-prosper.mp3"
+    },
+    "gpg-wedding-vows": {
+      "title": "GPG-signed wedding vows",
+      "kind": "transaction",
+      "txids": ["b55c3312ceeeb4ab422b658f5f4d5884775a498ddde6a527fca7b67752e1b044"],
+      "stream": "auto",
+      "trim_after_last": "-----END PGP SIGNATURE-----",
+      "decode": "text",
+      "filename": "wedding-vows.asc"
+    },
+    "chinese-hats-story": {
+      "title": "How to Play Chinese Hats short story",
+      "kind": "transaction",
+      "txids": ["3405f441f0d3acd8580d261d58e5a14d7638d0ee29200e673f496198d231edd7"],
+      "stream": "auto",
+      "trim_after": "Cont . . .",
+      "decode": "text",
+      "filename": "how-to-play-chinese-hats.txt"
+    },
+    "truecrypt-checksums": {
+      "title": "TrueCrypt 7.1a checksums",
+      "kind": "transaction",
+      "txids": ["0f96b2f6e3c4f4b6319efbafd2e7148d507b260b4d7914766e79aec7d9ac9574"],
+      "stream": "auto",
+      "trim_before": "TrueCrypt",
+      "trim_after_last": "truecrypt-x64.sys",
+      "decode": "text",
+      "filename": "truecrypt-7.1a-checksums.txt"
+    },
+    "pac-man-page": {
+      "title": "Playable Pac-Man HTML and JavaScript",
+      "kind": "transaction",
+      "txids": ["03cb74f270d498302d4dd9cbe82c090d801c8840ab6cb26b71d862489b981db8"],
+      "stream": "p2pkh-dust",
+      "trim_after": "Html5###############PacMan##############embii###############@",
+      "decode": "text",
+      "filename": "pac-man-bitcoin-root-metadata.txt",
+      "note": "The Bitcoin root stores the message, signature metadata, and an LNK record. The executable payload is referenced as @POT, meaning Potcoin; it is not contained in this Bitcoin transaction."
+    },
+    "dear-artificial-intelligence": {
+      "title": "Letter to future artificial intelligence",
+      "kind": "transaction",
+      "txids": ["206a0edb11ba0677248709d9bc5210b35e8a03710d9bb19c6f1e4e254bf21f5e"],
+      "stream": "auto",
+      "trim_before": "Dear Artificial Intelligence",
+      "trim_after": "A Human. ",
+      "decode": "text",
+      "filename": "dear-artificial-intelligence.txt"
+    },
+    "hyena-self-portrait": {
+      "title": "Gas-mask self-portrait",
+      "kind": "transaction",
+      "txids": ["c206e8fff656f07b27dac831ef9b956792bae4e76a2cb43f14f49f0298bf2c2f"],
+      "stream": "p2pkh-dust",
+      "trim_magic": true,
+      "trim_known_end": true,
+      "decode": "auto",
+      "filename": "hyena-self-portrait.jpg"
+    },
+    "they-live": {
+      "title": "They Live Ethereum-grave taunt",
+      "kind": "transaction",
+      "txids": ["83df1e5ecc1c7ac455d2855e15cff8fa5771afe2ad1796c8b6b1a8e910e829c4"],
+      "stream": "p2pkh-dust",
+      "trim_magic": true,
+      "trim_known_end": true,
+      "decode": "auto",
+      "filename": "they-live.jpg"
+    },
+    "chinese-wedding": {
+      "title": "Chinese wedding portrait and poem",
+      "kind": "transaction",
+      "txids": ["609d5e0f968c0ab7abc2be21468cfd552483d38b08e6df23d27766eb61b9be3c"],
+      "stream": "p2pkh-dust",
+      "trim_magic": true,
+      "trim_known_end": true,
+      "decode": "auto",
+      "filename": "chinese-wedding.jpg"
+    },
+    "superbuffo": {
+      "title": "Superbuffo comedian claim",
+      "kind": "transaction",
+      "txids": ["6240f61bbaeac66cd623e921a153addaf5f379a996f2de0f0c6506d628fe3812"],
+      "stream": "p2pkh-dust",
+      "trim_magic": true,
+      "trim_known_end": true,
+      "decode": "auto",
+      "filename": "superbuffo.jpg"
+    },
+    "halving-love-message": {
+      "title": "Block 420,000 love declaration",
+      "kind": "block",
+      "block_hash": "000000000000000002cce816c0ab2c5c269cb081896b7dcb34b8422d6b74ffa1",
+      "stream": "coinbase",
+      "trim_before": "Chandler",
+      "trim_after": "Mined by zzhhzz",
+      "decode": "text",
+      "filename": "halving-love-message.txt"
+    },
+    "yellow-robot": {
+      "title": "Yellow Robot street-art coordinates",
+      "kind": "atomsea",
+      "root_txid": "4cbb32cd27b5b5edc12d3559bdffc1355ac2a210463d5cfaadc7ce9b06675b2b",
+      "trim_magic": true,
+      "trim_known_end": true,
+      "decode": "auto",
+      "filename": "yellow-robot.jpg"
+    },
+    "tau-manifesto": {
+      "title": "Tau is better than Pi manifesto",
+      "kind": "transaction",
+      "txids": ["e450166eba552202fb6984867f2b851e2399c5a0ae05026bf6b056176491ec5d"],
+      "stream": "inputs",
+      "trim_before": "Tau",
+      "trim_after": "8:  Tau > pi",
+      "decode": "text",
+      "filename": "tau-manifesto.txt"
+    },
+    "tank-man": {
+      "title": "Tank Man photograph",
+      "kind": "transaction",
+      "txids": ["ca4f11131eca6b4d61daf707a470cfccd1ef3d80a6f8b70f1f07616b451ca64e"],
+      "stream": "p2pkh-dust",
+      "trim_magic": true,
+      "trim_known_end": true,
+      "decode": "auto",
+      "filename": "tank-man.jpg"
+    },
+    "mr-burns-forever": {
+      "title": "Mr. Burns You're here forever image",
+      "kind": "transaction",
+      "txids": ["94e319d09fc236fb9d7a24e60af8f47ed41ca3cc01e9950c925d806153ed8aa3"],
+      "stream": "inputs",
+      "trim_magic": true,
+      "trim_known_end": true,
+      "decode": "auto",
+      "filename": "mr-burns-forever.jpg"
+    },
+    "augustana-old-main": {
+      "title": "Augustana Old Main JPEG",
+      "kind": "transaction",
+      "txids": ["033d185d1a04c4bd6de9bb23985f8c15aa46234206ad29101c31f4b33f1a0e49"],
+      "stream": "inputs",
+      "trim_magic": true,
+      "trim_known_end": true,
+      "decode": "auto",
+      "filename": "augustana-old-main.jpg"
+    },
+    "refund-plea": {
+      "title": "Mis-sent bitcoin refund plea",
+      "kind": "transaction",
+      "txids": ["0f25e23b7b59fde67d8b2d41b749e4f89fd1ff8061aa0ddac8c27c8230167e35"],
+      "stream": "p2pkh-dust",
+      "trim_after": "Thank you in advance.",
+      "decode": "text",
+      "filename": "refund-plea.txt"
+    },
+    "starry-night": {
+      "title": "Starry Night SegWit witness image",
+      "kind": "transaction",
+      "txids": ["225ed8bc432d37cf434f80717286fd5671f676f12b573294db72a2a8f9b1e7ba"],
+      "stream": "witness",
+      "trim_magic": true,
+      "trim_known_end": true,
+      "decode": "auto",
+      "filename": "starry-night.jpg"
+    },
+    "hal-finney-memorial": {
+      "title": "Hal Finney Running Bitcoin memorial",
+      "kind": "transaction",
+      "txids": ["ea38c62294fa9a5c6ccbfe4c307bd9133a8dc407181b69fa092a1781cbf870bb"],
+      "stream": "opreturn",
+      "decode": "text",
+      "filename": "hal-finney-memorial.txt"
+    },
+    "55-hour-sermon": {
+      "title": "The 55-hour sermon",
+      "kind": "height-range-opreturn",
+      "start_height": 904530,
+      "end_height": 904881,
+      "match": "^(08|09|10)JULY[0-9]{4}",
+      "decode": "text",
+      "filename": "the-55-hour-sermon.txt",
+      "note": "The script orders matching OP_RETURN pieces by their embedded date-and-sequence prefix and preserves a txid index."
+    }
+  }
+}
