@@ -5,6 +5,9 @@ content directly from Bitcoin blocks and transactions. It turns public chain
 data into reproducible teaching examples without bundling the recovered
 documents, images, audio, code, or other payloads.
 
+For a concise description of every example, read the
+[short trivia guide](trivia-guide.md).
+
 ## What the collection covers
 
 - early Bitcoin milestones, including the genesis headline, the first
