@@ -1,5 +1,5 @@
 {
-  "schema": "blockblack.trivia-reconstruction/v2",
+  "schema": "bitct.trivia-reconstruction/v2",
   "trivia": {
     "genesis-headline": {
       "title": "Genesis newspaper headline",
